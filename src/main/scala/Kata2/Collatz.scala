@@ -10,6 +10,7 @@
     def collatz(n: Int, count : Int = 0): Int = {
 
       if (n == 1) {
+
         count + 1
 
       } else {
@@ -21,6 +22,8 @@
     }
 
     val num = StdIn.readLine("Enter a number: ").toInt
-    println(collatz(num))
+
+
+    println("The length of the Collatz Conjecture sequence is " +collatz(num))
 
   }
