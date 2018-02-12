@@ -1,7 +1,11 @@
+
+import scala.io.StdIn
+
 object examresults extends App {
 
 
-  def examResult(args: List[String], answers: List[String]): Int = {
+  def examResult(args: List[String], answers: List[String]): String = {
+
 
     val c = args.toArray
     val p = answers.toArray
@@ -24,9 +28,20 @@ object examresults extends App {
       }
 
     }
-    result
+    s"Your mark in th exam is $result"
   }
-  println(examResult(List("1", "2", "3"), (List("1", "2", "3"))))
+
+  val numQuestions = scala.io.StdIn.readLine("Enter how many questions are in the test").toInt
+
+    val pupilsAnswers = (1 to numQuestions).map(_ => scala.io.StdIn.readLine (s"Enter answer:  " )).toList
+
+
+    val correctAnswers = (1 to numQuestions).map(_ => scala.io.StdIn.readLine(s"Enter correct answer")).toList
+
+
+println(pupilsAnswers)
+  println(correctAnswers)
+    println(examResult(correctAnswers, pupilsAnswers))
 
 
 
